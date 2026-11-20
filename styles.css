@@ -81,6 +81,20 @@ body {
     animation: fadeIn 1.5s ease-in-out 0.5s forwards;
 }
 
+.season-badge {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #0ee30b 0%, #0ab807 100%);
+    color: #0f1d12;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    margin: 15px 0;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 0.3s forwards;
+    box-shadow: 0 4px 15px rgba(14, 227, 11, 0.4);
+}
+
 .cta {
     margin-top: 20px;
     padding: 15px 30px;
@@ -104,67 +118,96 @@ body {
     color: #0ee30b;
 }
 
-.why-play {
+.stats {
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
     background: #0a150c;
-}
-
-.why-play h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-.why-features {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
 }
 
-.feature-box {
+.stat-box {
     background: #0f1d12;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
+    padding: 30px 40px;
+    border-radius: 15px;
+    min-width: 200px;
     text-align: center;
     border: 2px solid #0ee30b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     animation: fadeInUp 1s ease-in-out forwards;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #0ee30b;
+.stat-box:nth-child(1) {
+    animation-delay: 0.1s;
 }
 
-.feature-box i {
-    font-size: 40px;
+.stat-box:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stat-box:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(14, 227, 11, 0.3);
+}
+
+.stat-box i {
+    font-size: 48px;
     color: #0ee30b;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.feature-box p {
-    font-size: 1.2rem;
+.stat-box h3 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    color: #0ee30b;
+}
+
+.stat-box p {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #ccc;
 }
 
 .join-discord {
-    text-align: center;
-    padding: 50px 20px;
-    background: #0a150c;
+    padding: 60px 20px;
+    background: #0f1d12;
 }
 
-.join-discord h2 {
+.discord-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.discord-content {
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+}
+
+.discord-content h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
-.join-discord p {
+.discord-content p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    color: #ccc;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .discord-btn {
@@ -179,8 +222,17 @@ body {
 }
 
 .discord-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #7289da;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(114, 137, 218, 0.5);
+}
+
+.discord-widget {
+    flex-shrink: 0;
+}
+
+.discord-widget iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .popup {
@@ -284,9 +336,30 @@ body.no-scroll {
         font-size: 1.2rem;
     }
 
-    .why-features {
+    .season-badge {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
+
+    .stats {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
+    }
+
+    .stat-box {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .discord-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .discord-widget iframe {
+        width: 100%;
+        max-width: 350px;
     }
 
     .nav-links {
